@@ -1,6 +1,6 @@
 #property copyright "Niketion"
 #property link      "https://www.github.com/Niketion/Neuron"
-#property version   "0.2.0-rc.1"
+#property version   "1.0.0-beta"
 #property strict
 #property indicator_chart_window
 
@@ -13,21 +13,27 @@ int OnInit() {
    insertText("versions", 8, "v0.2.0-rc.1", 10, 18, clrWhite);
    insertText("license", 7, "GNU(TM)", 115, 55, clrWhite);
    
-   createRet("stoch",          15, 10, 70, clrRed, false);
-   insertText("stochText", 8, "Stoch",           30, 75, clrBlack);
    createRet("rsi",            15, 10, 85, clrRed, false);
    insertText("rsiText",   8, "RSI",             30, 90, clrBlack);
-   
+            
    for (int i=0;i<ChartIndicatorsTotal(ChartID(), 0);i++) {
-      if (ChartIndicatorName(ChartID(), 0, i) == "Neuron.BB") {
-         createRet("bolliger_bands", 15, 10, 100, clrRed, false);
-         insertText("bbText",    8, "Bollinger Bands", 30, 105, clrBlack);
-      }
-   }
-   
-   if (ChartIndicatorName(ChartID(), 1, 0) == "Neuron.CCI") {
-      createRet("cci",            15, 10, 115, clrRed, false);
-      insertText("cciText",   8, "CCI",             30, 120, clrBlack);
+      for (int x=0;x<ChartIndicatorsTotal(ChartID(), 0);x++) {
+         if (ChartIndicatorName(ChartID(), x, i) == "Neuron.BB") {
+            createRet("bolliger_bands", 15, 10, 100, clrRed, false);
+            insertText("bbText",    8, "Bollinger Bands", 30, 105, clrBlack);
+         }
+         
+         if (ChartIndicatorName(ChartID(), x, i) == "Neuron.CCI") {
+            createRet("cci",            15, 10, 115, clrRed, false);
+            insertText("cciText",   8, "CCI",             30, 120, clrBlack);
+         }
+         
+         if (ChartIndicatorName(ChartID(), x, i) == "Neuron.STOCH") {
+            createRet("stoch",          15, 10, 70, clrRed, false);
+            insertText("stochText", 8, "Stoch",           30, 75, clrBlack);
+         }
+      
+      }  
    }
    
    insertText("separator1", 10, "_______________________", 10, 18, clrWhite);
