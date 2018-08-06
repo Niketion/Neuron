@@ -15,7 +15,10 @@ int OnInit() {
    
    createRet("rsi",            15, 10, 85, clrRed, false);
    insertText("rsiText",   8, "RSI",             30, 90, clrBlack);
-            
+   
+   createRet("stoch",          15, 10, 70, clrRed, false);
+   insertText("stochText", 8, "Stoch",           30, 75, clrBlack);
+      
    for (int i=0;i<ChartIndicatorsTotal(ChartID(), 0);i++) {
       for (int x=0;x<ChartIndicatorsTotal(ChartID(), 0);x++) {
          if (ChartIndicatorName(ChartID(), x, i) == "Neuron.BB") {
@@ -27,12 +30,7 @@ int OnInit() {
             createRet("cci",            15, 10, 115, clrRed, false);
             insertText("cciText",   8, "CCI",             30, 120, clrBlack);
          }
-         
-         if (ChartIndicatorName(ChartID(), x, i) == "Neuron.STOCH") {
-            createRet("stoch",          15, 10, 70, clrRed, false);
-            insertText("stochText", 8, "Stoch",           30, 75, clrBlack);
-         }
-      
+
       }  
    }
    
