@@ -1,5 +1,6 @@
-#property copyright "Copyright © 2005, MetaQuotes Software Corp."
-#property link      "http://www.metaquotes.net/"
+#property copyright "Niketion"
+#property link      "https://www.github.com/Niketion/Neuron"
+#property version   "0.3.0-rc.1"
 
 #property indicator_chart_window
 #property indicator_buffers 3
